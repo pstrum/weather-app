@@ -35,6 +35,7 @@ var weatherdata_module = require('./weather_exdata');
   })
 
   var currently = weatherdata_module.currently;
+  console.log(weatherdata_module);
   currently.time = "Now";
   var daily = weatherdata_module.daily.data[0];
   weatherModule.hourlySum(currently);
