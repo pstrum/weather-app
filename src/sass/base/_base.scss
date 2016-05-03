@@ -1,0 +1,19 @@
+body {
+  font-family: $primary;
+  font-weight: weight(light);
+  color: color(primary);
+  background: color(base);
+}
+
+input {
+  font-size: type-scale(0);
+}
+
+button {
+  border: none;
+  background: color(base);
+  cursor: pointer;
+  &:focus {
+    outline: 0;
+  }
+}

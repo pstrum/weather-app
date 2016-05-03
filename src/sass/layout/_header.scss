@@ -1,0 +1,24 @@
+header {
+  @extend %section-padding;
+  padding-bottom: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  .row_justify {
+    @extend %flex-row-justify;
+    .icon-search {
+      order: 1;
+    }
+    h2 {
+      order: 2;
+    }
+    .icon-map {
+      order: 3;
+    }
+  }
+
+  time {
+    display: inline-block;
+  }
+}

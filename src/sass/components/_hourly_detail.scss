@@ -1,0 +1,11 @@
+.detailed {
+  li {
+    p {
+      font-weight: weight(light);
+      font-size: 14px;
+    }
+    p:last-child {
+      font-weight: weight(normal);
+    }
+  }
+}

@@ -1,0 +1,55 @@
+%section-padding {
+  padding: $base-line-height;
+}
+
+%hide-visually {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px !important;
+}
+
+%flex-row-justify {
+  display: flex;
+  justify-content: space-between;
+}
+
+%slide-layout {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  min-width: 16rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  z-index: 1;
+  transform: translateX(-100%);
+  transition: transform 0.15s ease-in;
+  @media screen and (min-width: break(first)) {
+    order: 3;
+    position: absolute;
+    top: 0;
+    width: auto;
+    height: 100%;
+    z-index: -2;
+    li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  @media screen and (min-width: break(second)) {
+    visibility: visible;
+    position: static;
+    left: 0;
+    height: auto;
+    transform: none;
+    background: none;
+    transition: none;
+    z-index: 0;
+  }
+}

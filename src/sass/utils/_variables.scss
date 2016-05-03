@@ -1,0 +1,55 @@
+$break: (
+  first: 48em,
+  second: 80em
+);
+
+$color-key: base !default;
+
+$theme-colors: (
+  primary: (
+    base: #4A4A4A
+  ),
+  accent: (
+    base: #4A90E2,
+    alternative: #D45564
+  ),
+  secondary: (
+    base: #F5A623
+  ),
+  tertiary: (
+    base: #BD10E0
+  ),
+  base: (
+    base: #FFFFFF,
+    dark: #E8E8E8
+  )
+);
+
+$base-font-size: 1rem;
+$base-line-height: $base-font-size * 1.25;
+
+$type-scale: (
+  -1: .75rem,
+  0: 1rem,
+  1: 1.333rem,
+  2: 1.777rem,
+  3: 2.369rem,
+  4: 3.157rem
+);
+
+$line-height: (
+  -1: $base-line-height,
+  0: $base-line-height,
+  1: $base-line-height * 2,
+  2: $base-line-height * 2,
+  3: $base-line-height * 2,
+  4: $base-line-height * 3
+);
+
+$primary: 'Open Sans', sans-serif;
+
+$weight: (
+  light: 300,
+  normal: 400,
+  semibold: 600,
+);

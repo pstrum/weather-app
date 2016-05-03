@@ -1,0 +1,20 @@
+.menu-slide {
+  @extend %slide-layout;
+}
+
+body.menu-open {
+  .menu-slide {
+    visibility: visible;
+    transform: translateX(0) !important;
+    @media screen and (min-width: break(first)) {
+      left: 70px;
+      border-right: 1px solid color(primary);
+    }
+    @media screen and (min-width: break(second)) {
+      border-right: none;
+    }
+    ul {
+      opacity: 1;
+    }
+  }
+}

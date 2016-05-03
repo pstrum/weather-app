@@ -1,0 +1,56 @@
+%svg-btn {
+  height: $base-line-height * 2;
+  width: $base-line-height * 2;
+  border-radius: $base-line-height;
+  background-color: color(base);
+  text-align: center;
+  &:hover {
+    background-color: color(base, dark);
+  }
+}
+.icon-search {
+  @extend %svg-btn;
+  svg g {
+    stroke: color(primary);
+  }
+}
+
+.icon-map {
+  @extend %svg-btn;
+  svg g {
+    fill: color(primary);
+  }
+}
+
+.menu-nav {
+  button {
+    height: $base-line-height * 3;
+    width: $base-line-height * 3;
+    border-radius: $base-line-height * 1.5;
+    background-color: color(base);
+    text-align: center;
+    &:hover {
+      background-color: color(base, dark);
+    }
+  }
+  .selected {
+    background-color: color(base, dark);
+  }
+}
+
+.menu-slide {
+  button {
+    height: $base-line-height * 2;
+    width: $base-line-height * 2;
+    border-radius: $base-line-height;
+    background-color: color(primary);
+    text-align: center;
+    &:hover {
+      background-color: mix(white, color(primary), 10%);
+    }
+  }
+  svg {
+    height: $base-line-height;
+    width: $base-line-height;
+  }
+}

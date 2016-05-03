@@ -1,0 +1,29 @@
+%weather-list {
+  li {
+    border-top: 1px solid color(base, dark);
+    &:first-child {
+      border-top: none;
+    }
+  }
+  button {
+    font-family: $primary;
+    font-weight: weight(light);
+    font-size: type-scale(0);
+    &:hover {
+      background-color: mix(white, color(base, dark), 80%);
+    }
+  }
+  .hour {
+    font-weight: weight(light);
+    font-size: type-scale(1);
+  }
+  .hour-temp {
+    font-size: type-scale(1);
+  }
+}
+.daily {
+  @extend %weather-list;
+}
+.hourly {
+  @extend %weather-list;
+}

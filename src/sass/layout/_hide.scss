@@ -1,0 +1,7 @@
+.hide-visually {
+  @extend %hide-visually;
+}
+
+.hide-completely {
+  display: none !important;
+}
