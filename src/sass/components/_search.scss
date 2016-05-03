@@ -1,0 +1,12 @@
+.search-locations {
+  @extend %section-padding;
+  color: color(base);
+  background-color: color(primary);
+  h2 {
+    font-weight: weight(light);
+  }
+}
+
+.menu-slide {
+  background-color: color(primary);
+}

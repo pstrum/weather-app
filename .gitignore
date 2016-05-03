@@ -28,3 +28,9 @@ build
 
 # Mac OS X artifact
 .DS_Store
+
+# Environment
+server
+
+# Wireframes
+wireframes

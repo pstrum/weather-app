@@ -1,0 +1,39 @@
+.pac-container {
+  background-color: color(primary);
+  box-shadow: none;
+  border-top: none;
+}
+
+.pac-icon {
+  display: none;
+}
+
+.pac-item-query {
+  display: block;
+  padding-top: $base-line-height;
+}
+
+.pac-item, .pac-item-query {
+  font-family: $primary;
+  font-size: type-scale(1);
+  font-weight: weight(light);
+  color: color(base);
+}
+
+.pac-item {
+  padding-bottom: $base-line-height;
+  &:hover {
+    background-color: mix(white, color(primary), 20%);
+  }
+  &:first-child {
+    border-top: none;
+  }
+}
+
+.pac-matched {
+  font-weight: weight(light);
+}
+
+.pac-item-selected {
+  background-color: mix(white, color(primary), 20%);
+}

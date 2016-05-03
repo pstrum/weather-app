@@ -1,0 +1,52 @@
+%weather-section {
+  max-width: 330px;
+  margin: 0 auto;
+}
+%weather-detail {
+
+}
+.daily {
+  @extend %weather-section;
+  padding-top: 66px;
+  #dailyDetailed {
+    width: 100%;
+    button {
+      width: 100%;
+      padding: $base-line-height 0;
+    }
+    .day {
+      display: inline-block;
+      float: left;
+      width: 64px;
+      text-align: left;
+    }
+    .day-ave {
+      display: inline-block;
+    }
+    .day-temp {
+      float: right;
+    }
+  }
+}
+.hourly  {
+  @extend %weather-section;
+  #hourlyDetailed {
+    width: 100%;
+    button {
+      width: 100%;
+      padding: $base-line-height 0;
+    }
+    .hour {
+      display: inline-block;
+      float: left;
+      width: 64px;
+      text-align: left;
+    }
+    .hour-sum {
+      display: inline-block;
+    }
+    .hour-temp {
+      float: right;
+    }
+  }
+}

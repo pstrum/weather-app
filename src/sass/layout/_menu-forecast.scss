@@ -1,0 +1,13 @@
+.menu-nav {
+  margin-top: $base-line-height / 2;
+  ul {
+    display: flex;
+    justify-content: space-around;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  svg {
+    height: 32px;
+    width: 32px;
+  }
+}

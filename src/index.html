@@ -1,0 +1,231 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>SkyCast Weather App</title>
+    <meta name="description" content="Search, Save, and View Your Weather.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,600,400" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <header>
+      <h1 class="hide-visually">SkyCast Weather</h1>
+      <div class="row_justify">
+        <h2 id="currentLocation">Frederick</h2>
+        <button class="icon-search" type="button" aria-controls="search" aria-label="Search Google Places">
+          <svg width="24px" height="26px" viewBox="0 0 24 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <title>Search Icon</title>
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g transform="translate(-49.000000, -46.000000)" stroke-width="4">
+            <g transform="translate(51.000000, 48.000000)">
+            <circle cx="7.71875" cy="7.71875" r="7.71875"></circle>
+            <path d="M13.46875,14.65625 L19.40625,21.78125" stroke-linecap="round"></path>
+            </g>
+            </g>
+            </g>
+          </svg>
+        </button>
+        <button class="icon-map" type="button" aria-controls="menu" aria-label="Your Locations">
+          <svg width="21px" height="22px" viewBox="0 0 21 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <title>Map Icon</title>
+            <defs></defs>
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g transform="translate(-280.000000, -14.000000)">
+            <g transform="translate(280.000000, 14.000000)">
+            <path d="M6,1.55814082e-15 C6.1015,1.55814082e-15 6.1895,0.0374252874 6.264,0.112275862 C6.3385,0.187126437 6.3755,0.276137931 6.375,0.379310345 L6.375,17.8275862 C6.375,17.9858851 6.3085,18.0966437 6.1755,18.1598621 L0.5505,21.1943448 C0.496,21.2262069 0.4375,21.2421379 0.375,21.2421379 C0.2735,21.2421379 0.1855,21.2047126 0.111,21.1298621 C0.0365,21.0550115 -0.0005,20.966 1.2541357e-13,20.8628276 L1.2541357e-13,3.41455172 C1.2541357e-13,3.25625287 0.0665,3.14549425 0.1995,3.08227586 L5.8245,0.0477931034 C5.879,0.0159310345 5.9375,0 6,0 L6,1.55814082e-15 Z M20.625,1.55814082e-15 C20.7265,1.55814082e-15 20.8145,0.0374252874 20.889,0.112275862 C20.9635,0.187126437 21.0005,0.276137931 21,0.379310345 L21,17.8275862 C21,17.9858851 20.9335,18.0966437 20.8005,18.1598621 L15.1755,21.1943448 C15.121,21.2262069 15.0625,21.2421379 15,21.2421379 C14.8985,21.2421379 14.8105,21.2047126 14.736,21.1298621 C14.6615,21.0550115 14.6245,20.966 14.625,20.8628276 L14.625,3.41455172 C14.625,3.25625287 14.6915,3.14549425 14.8245,3.08227586 L20.4495,0.0477931034 C20.504,0.0159310345 20.5625,0 20.625,0 L20.625,1.55814082e-15 Z M7.5,-5.88226774e-15 C7.5625,-5.88226774e-15 7.61725,0.0118850575 7.66425,0.0356551724 L13.66425,3.07013793 C13.80475,3.14903448 13.875,3.26358621 13.875,3.4137931 L13.875,20.862069 C13.875,20.9647356 13.838,21.0537471 13.764,21.1291034 C13.69,21.2044598 13.602,21.2418851 13.5,21.2413793 C13.4375,21.2413793 13.38275,21.2294943 13.33575,21.2057241 L7.33575,18.1712414 C7.19525,18.0923448 7.125,17.9777931 7.125,17.8275862 L7.125,0.379310345 C7.125,0.276643678 7.162,0.187632184 7.236,0.112275862 C7.31,0.0369195402 7.398,-0.000505747126 7.5,-5.86121134e-15 L7.5,-5.88226774e-15 Z"></path>
+            </g>
+            </g>
+            </g>
+          </svg>
+        </button>
+      </div>
+      <time id="time"></time>
+      <nav class="menu-nav">
+        <ul>
+          <li>
+            <button type="button" aria-controls="hourly" aria-label="Hourly Forecast">
+              <svg>
+                <title>Hourly Forecast</title>
+                <use xlink:href="/images/clock.svg#clock"></use>
+              </svg>
+            </button>
+          </li>
+          <li>
+            <button type="button" aria-controls="daily" aria-label="Daily Forecast">
+              <svg>
+                <title>Daily Forecast</title>
+                <use xlink:href="/images/daily.svg#daily"></use>
+              </svg>
+            </button>
+          </li>
+          <li>
+            <button type="button" aria-controls="monthly" aria-label="Monthly Forecast">
+              <svg>
+                <title>Monthly Forecast</title>
+                <use xlink:href="/images/calendar.svg#monthly"></use>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </nav>
+      <section data-weather="hourly" class="summary">
+        <h2 id="selHour"></h2>
+        <p id="hSum"></p>
+        <p id="hTemp"></p>
+        <ul class="detailed">
+          <li>
+            <p>Feels like</p>
+            <p id="hAppTemp"></p>
+          </li>
+          <li>
+            <p>Dew Point</p>
+            <p id="hDew"></p>
+          </li>
+          <li>
+            <p>Precipitation</p>
+            <p id="hPrecip"></p>
+          </li>
+          <li>
+            <p>Wind</p>
+            <p id="hWind"></p>
+          </li>
+          <li>
+            <p>Humidity</p>
+            <p id="hHumid"></p>
+          </li>
+          <li>
+            <p>Cloud Cover</p>
+            <p id="hCloud"></p>
+          </li>
+        </ul>
+      </section>
+      <section data-weather="daily" class="summary hide-completely">
+        <h2 id="day"></h2>
+        <p id="dTemp"></p>
+        <p id="dSum"></p>
+        <ul class="detailed">
+          <li>
+            <p>Average</p>
+            <p id="dAve"></p>
+          </li>
+          <li>
+            <p>Dew Point</p>
+            <p id="dDew"></p>
+          </li>
+          <li>
+            <p>Precipitation</p>
+            <p id="dPrecip"></p>
+          </li>
+          <li>
+            <p>Wind</p>
+            <p id="dWind"></p>
+          </li>
+          <li>
+            <p>Humidity</p>
+            <p id="dHumid"></p>
+          </li>
+          <li>
+            <p>Cloud Cover</p>
+            <p id="dCloud"></p>
+          </li>
+          <li>
+            <p>Sunrise</p>
+            <p id="dSunrise"></p>
+          </li>
+          <li>
+            <p>Sunset</p>
+            <p id="dSunset"></p>
+          </li>
+        </ul>
+      </section>
+      <section data-weather="monthly" class="summary hide-completely">
+        <h2 id="month"></h2>
+        <p id="mTemp"></p>
+        <p id="mSum"></p>
+        <ul class="detailed">
+          <li>
+            <p>Average</p>
+            <p id="mAve"></p>
+          </li>
+          <li>
+            <p>Dew Point</p>
+            <p id="mDew"></p>
+          </li>
+          <li>
+            <p>Precipitation</p>
+            <p id="mPrecip"></p>
+          </li>
+          <li>
+            <p>Wind</p>
+            <p id="mWind"></p>
+          </li>
+          <li>
+            <p>Humidity</p>
+            <p id="mHumid"></p>
+          </li>
+          <li>
+            <p>Cloud Cover</p>
+            <p id="mCloud"></p>
+          </li>
+          <li>
+            <p>Sunrise</p>
+            <p id="mSunrise"></p>
+          </li>
+          <li>
+            <p>Sunset</p>
+            <p id="mSunset"></p>
+          </li>
+        </ul>
+      </section>
+    </header>
+    <main>
+    <div class="menu-slide">
+      <section class="search-locations">
+        <h2>Search</h2>
+        <button class="icon-close" type="button">
+          <svg>
+            <title>Close</title>
+            <use xlink:href="/images/close.svg#close"></use>
+          </svg>
+        </button>
+        <input class="input-text" id="findLocation" type="text" size="12" placeholder="Enter city">
+      </section>
+    </div>
+    <section data-weather="hourly" class="hourly">
+      <ul id="hourlyDetailed">
+      </ul>
+    </section>
+    <section data-weather="daily" class="daily hide-completely">
+      <ul id="dailyDetailed">
+      </ul>
+    </section>
+    <section data-weather="monthly" class="monthly hide-completely">
+      <ul id="monthlyDetailed">
+      </ul>
+    </section>
+    </main>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-2.1.1.min.js"><\/script>')</script>
+    <script src="js/bundle.js"></script>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+                                                        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+e.src='https://www.google-analytics.com/analytics.js';
+r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+    </script>
+  </body>
+</html>

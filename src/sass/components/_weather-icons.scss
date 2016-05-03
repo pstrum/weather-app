@@ -1,0 +1,88 @@
+@mixin svg-before-pseudo($image) {
+  content: "";
+  min-height: 16px;
+  min-width: 16px;
+  padding-right: 5px;
+  background-image: url($image);
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+}
+.clear-day {
+  color: color(secondary);
+  &:before {
+    @include svg-before-pseudo('/images/clear-day.svg')
+  }
+}
+.clear-night {
+  color: color(primary);
+  &:before {
+    @include svg-before-pseudo('/images/clear-night.svg')
+  }
+}
+.rain {
+  color: color(accent);
+  &:before {
+    @include svg-before-pseudo('/images/rain.svg')
+  }
+}
+.snow {
+  color: color(base, dark);
+  &:before {
+    @include svg-before-pseudo('/images/snow.svg')
+  }
+}
+.sleet {
+  color: color(accent);
+  &:before {
+    @include svg-before-pseudo('/images/sleet.svg')
+  }
+}
+.wind {
+  color: color(primary);
+  &:before {
+    @include svg-before-pseudo('/images/wind.svg')
+  }
+}
+.fog {
+  color: color(primary);
+  &:before {
+    @include svg-before-pseudo('/images/fog.svg')
+  }
+}
+.cloudy {
+  color: color(primary);
+  &:before {
+    @include svg-before-pseudo('/images/cloudy.svg')
+  }
+}
+.partly-cloudy-day {
+  color: color(secondary);
+  &:before {
+    @include svg-before-pseudo('/images/partly-cloudy-day.svg')
+  }
+}
+.partly-cloudy-night {
+  color: color(primary);
+  &:before {
+    @include svg-before-pseudo('/images/partly-cloudy-night.svg')
+  }
+}
+.hail {
+  color: color(accent);
+  &:before {
+    @include svg-before-pseudo('/images/hail.svg')
+  }
+}
+.thunderstorm {
+  color: color(accent);
+  &:before {
+    @include svg-before-pseudo('/images/thunderstorm.svg')
+  }
+}
+.tornado {
+  color: color(primary);
+  &:before {
+    @include svg-before-pseudo('/images/tornado.svg')
+  }
+}

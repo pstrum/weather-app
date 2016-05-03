@@ -1,0 +1,18 @@
+.summary {
+  padding-bottom: $base-line-height;
+  padding-top: $base-line-height / 2;
+  border-bottom: 1px solid color(base, dark);
+  h2 {
+    font-weight: weight(semibold);
+    font-size: type-scale(1);
+  }
+  #hSum {
+    font-weight: weight(normal);
+    font-size: type-scale(1);
+  }
+  #hTemp, #dTemp {
+    font-family: $primary;
+    font-weight: weight(light);
+    font-size: type-scale(2);
+  }
+}

@@ -1,0 +1,8 @@
+header {
+  time {
+    font-family: $primary;
+    font-weight: weight(light);
+    font-size: type-scale(0);
+    color: mix(black, color(base, dark), 30%);
+  }
+}

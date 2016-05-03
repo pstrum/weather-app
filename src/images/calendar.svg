@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="26px" height="28px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<symbol id="monthly" viewBox="0 0 26 28">
+    <title>Monthly Forecast</title>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-238.000000, -92.000000)">
+            <g transform="translate(238.000000, 92.000000)">
+                <path d="M22.5333333,0 L22.5333333,1.75 L19.0666667,1.75 L19.0666667,0 L6.93333333,0 L6.93333333,1.75 L3.46666667,1.75 L3.46666667,0 L0,0 L0,28 L26,28 L26,0 L22.5333333,0 L22.5333333,0 Z M24.2666667,26.25 L1.73333333,26.25 L1.73333333,7 L24.2666667,7 L24.2666667,26.25 L24.2666667,26.25 Z" fill="#4A4A4A"></path>
+                <polygon fill="#4990E2" points="8.66666667 10.5 12.1333333 10.5 12.1333333 14 8.66666667 14"></polygon>
+                <polygon fill="#4990E2" points="13.8666667 10.5 17.3333333 10.5 17.3333333 14 13.8666667 14"></polygon>
+                <polygon fill="#4990E2" points="19.0666667 10.5 22.5333333 10.5 22.5333333 14 19.0666667 14"></polygon>
+                <polygon fill="#4990E2" points="3.46666667 21 6.93333333 21 6.93333333 24.5 3.46666667 24.5"></polygon>
+                <polygon fill="#4990E2" points="8.66666667 21 12.1333333 21 12.1333333 24.5 8.66666667 24.5"></polygon>
+                <polygon fill="#4990E2" points="13.8666667 21 17.3333333 21 17.3333333 24.5 13.8666667 24.5"></polygon>
+                <polygon fill="#4990E2" points="8.66666667 15.75 12.1333333 15.75 12.1333333 19.25 8.66666667 19.25"></polygon>
+                <polygon fill="#4990E2" points="13.8666667 15.75 17.3333333 15.75 17.3333333 19.25 13.8666667 19.25"></polygon>
+                <polygon fill="#4990E2" points="19.0666667 15.75 22.5333333 15.75 22.5333333 19.25 19.0666667 19.25"></polygon>
+                <polygon fill="#4990E2" points="3.46666667 15.75 6.93333333 15.75 6.93333333 19.25 3.46666667 19.25"></polygon>
+            </g>
+        </g>
+    </g>
+</symbol>
+</svg>

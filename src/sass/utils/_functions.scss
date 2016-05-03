@@ -1,0 +1,19 @@
+@function color($color-name, $color-variant: $color-key) {
+  @return map-get(map-get($theme-colors, $color-name), $color-variant);
+}
+
+@function weight($key: 'light') {
+  @return map-get($weight, $key);
+}
+
+@function type-scale($ratio) {
+  @return map-get($type-scale, $ratio);
+}
+
+@function line-height($ratio) {
+  @return map-get($line-height, $ratio);
+}
+
+@function break($key) {
+  @return map-get($break, $key);
+}
