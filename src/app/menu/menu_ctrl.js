@@ -1,6 +1,6 @@
 (function menuController() {
 
-  $(".icon-search").click(function(event) {
+  $(".icon-search, .enter-location").click(function(event) {
 
     event.preventDefault();
 
@@ -27,9 +27,9 @@
 
     var windowPosition = -Math.abs(window.pageYOffset);
 
-    if ($("body").hasClass("menu-open")) {
+    if ($("body").hasClass("menu-open") || $("body").hasClass("menu-open-right")) {
       $("window").scrollTop(500);
-      $("body").removeClass("fixed").removeClass("menu-open").removeAttr("style");
+      $("body").removeClass("fixed").removeClass("menu-open").removeClass("menu-open-right").removeAttr("style");
       $("html").removeClass("body-menu");
     }
 

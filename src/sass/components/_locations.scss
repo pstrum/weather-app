@@ -1,0 +1,19 @@
+.show-locations {
+  @extend %section-padding;
+  color: color(base);
+  h2 {
+    font-weight: weight(light);
+  }
+}
+.menu-slide-left {
+  background-color: color(primary);
+}
+
+.locations-list {
+  button {
+    font-family: $primary;
+    font-size: type-scale(1);
+    font-weight: weight(normal);
+    color: color(base);
+  }
+}

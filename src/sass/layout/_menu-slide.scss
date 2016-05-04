@@ -1,20 +1,30 @@
 .menu-slide {
-  @extend %slide-layout;
+  @include slide-layout(translateX(-100%));
+}
+.menu-slide-left {
+  @include slide-layout(translateX(200%));
 }
 
 body.menu-open {
   .menu-slide {
     visibility: visible;
     transform: translateX(0) !important;
-    @media screen and (min-width: break(first)) {
-      left: 70px;
-      border-right: 1px solid color(primary);
-    }
-    @media screen and (min-width: break(second)) {
-      border-right: none;
-    }
-    ul {
-      opacity: 1;
-    }
+    /*@media screen and (min-width: break(first)) {*/
+      /*left: 70px;*/
+      /*border-right: 1px solid color(primary);*/
+    /*}*/
+    /*@media screen and (min-width: break(second)) {*/
+      /*border-right: none;*/
+    /*}*/
+    /*ul {*/
+      /*opacity: 1;*/
+    /*}*/
+  }
+}
+
+body.menu-open-right {
+  .menu-slide-left {
+    visibility: visible;
+    transform: translateX(0) !important;
   }
 }

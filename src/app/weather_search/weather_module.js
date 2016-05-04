@@ -1,31 +1,24 @@
-var xhr = require('./xhr_req.js');
 var env = require('../../../server/config/environment');
 
 var weather_module = module.exports = {
 
-  getWeather: function(lat, lng) {
-
-    var apiKey = env.forecastKey;
-    var urlString = 'https://api.forecast.io/forecast/' + apiKey + '/' + lat + ',' + lng;
-    var weatherData = localStorage;
-
-    var req = $.ajax({
-      url: urlString,
-      method: 'GET',
-      dataType: "jsonp",
-    });
-    req.done(function(data) {
-      weather_module.hourlySum(data);
-      console.log(data);
-    });
-    req.fail(function( jqXHR, status ) {
-      console.log( "Request failed: " + status );
-    });
-
-  },
-
   updateLocation: function(city) {
+    $('.hourly ul, .daily ul, .monthly ul').children().remove();
     $('#currentLocation').html(city);
+    $('html').removeClass('body-menu');
+    $('.menu-nav button').removeClass('selected');
+    $('.menu-nav [aria-label="Hourly Forecast"]').addClass('selected');
+    var weatherSections = $('[data-weather]');
+    $.each(weatherSections, function(index, value) {
+      var dataDash = $(this).attr('data-weather');
+      if (dataDash == 'hourly') {
+        if ($(this).hasClass('hide-completely')) {
+          $(this).removeClass('hide-completely');
+        }
+      } else if (!$(this).hasClass('hide-completely')) {
+        $(this).addClass('hide-completely');
+      }
+    });
   },
 
   hourlySum: function(dataObj) {
@@ -41,8 +34,8 @@ var weather_module = module.exports = {
     var precip = Math.round(current.precipProbability * 100);
     var direction = weather_module.findBearing(current.windBearing);
     var img = current.icon;
-    var humid = current.humidity * 100;
-    var cover = current.cloudCover * 100;
+    var humid = Math.round(current.humidity * 100);
+    var cover = Math.round(current.cloudCover * 100);
 
     $('#selHour').html(selectedHour);
     $('#hSum').html(current.summary);
@@ -53,22 +46,20 @@ var weather_module = module.exports = {
     $('#hWind').html(current.windSpeed + " " + direction);
     $('#hHumid').html(humid + "%");
     $('#hCloud').html(cover + "%");
-    console.log(current);
   },
 
   dailySum: function(dataObj) {
-    console.log(dataObj);
     var dayData = dataObj;
     var day = weather_module.getDayOfWeek(dayData.time);
     var tempMin = Math.round(dayData.temperatureMin);
     var tempMax = Math.round(dayData.temperatureMax);
-    var aveTemp = tempMin + tempMax / 2;
+    var aveTemp = Math.round((tempMin + tempMax) / 2);
     var dew = Math.round(dayData.dewPoint);
     var precip = Math.round(dayData.precipProbability * 100);
     var direction = weather_module.findBearing(dayData.windBearing);
     var img = dayData.icon;
-    var humid = dayData.humidity * 100;
-    var cover = dayData.cloudCover * 100;
+    var humid = Math.round(dayData.humidity * 100);
+    var cover = Math.round(dayData.cloudCover * 100);
     var sunrise = weather_module.convertTimeHourMin(dayData.sunriseTime);
     var sunset = weather_module.convertTimeHourMin(dayData.sunsetTime);
 
@@ -83,6 +74,31 @@ var weather_module = module.exports = {
     $('#dCloud').html(cover + "%");
     $('#dSunrise').html(sunrise);
     $('#dSunset').html(sunset);
+  },
+
+  monthSum: function(dataObj) {
+    var month = dataObj.trip;
+    var monthName = month.period_of_record.date_start.date.monthname;
+    var tempMin = Math.round(month.temp_low.avg.F);
+    var tempMax = Math.round(month.temp_high.avg.F);
+    var dewMin = Math.round(month.dewpoint_low.avg.F);
+    var dewMax = Math.round(month.dewpoint_high.avg.F);
+    var precip = month.chance_of.chanceofprecip.percentage;
+    var cloud = month.cloud_cover.cond;
+    var fog = month.chance_of.chanceoffogday.percentage;
+    var snow = month.chance_of.chanceofsnowday.percentage;
+    var thun = month.chance_of.chanceofthunderday.percentage;
+    var sun = month.chance_of.chanceofsunnycloudyday.percentage;
+
+    $('#month').html(monthName);
+    $('#mTemp').html(tempMin + " – " + tempMax);
+    $('#mDew').html(dewMin + " – " + dewMax);
+    $('#mPrecip').html(precip + "%");
+    $('#mFog').html(fog + "%");
+    $('#mSnow').html(snow + "%");
+    $('#mCloud').html(cloud);
+    $('#mSun').html(sun + "%");
+    $('#mThun').html(thun + "%");
   },
 
   hourlyDet: function(dataObj) {
@@ -104,7 +120,6 @@ var weather_module = module.exports = {
       hoursSumm.push([time, hourSummary, image, temp, hours[i]]);
       i++;
     }
-    console.log(hoursSumm);
 
     $.each(hoursSumm, function (index, value) {
       $domList.append('<li><button data-idx="' + index + '"><h3 class="hour">' + value[0] + '</h3><p class="hour-sum">' + value[1] + '</p><p class="hour-temp' + " " + value[2] + '">' + value[3] + '</p></button></li>');
@@ -114,7 +129,6 @@ var weather_module = module.exports = {
 
       var idx = $(this).attr('data-idx');
       var newData = hoursSumm[idx][4];
-      console.log(newData);
       weather_module.hourlySum(newData);
 
     });
@@ -227,6 +241,81 @@ var weather_module = module.exports = {
       bear = 'NNW';
     }
     return bear;
+  },
+
+  getWeather: function(lat, lng) {
+
+    if (!$('.enter-location').hasClass('hide-completely')) {
+      $('.enter-location').addClass('hide-completely');
+    }
+    var apiKey = env.forecastKey;
+    var urlString = 'https://api.forecast.io/forecast/' + apiKey + '/' + lat + ',' + lng;
+    var weatherData = localStorage;
+
+    var req = $.ajax({
+      url: urlString,
+      method: 'GET',
+      dataType: "jsonp",
+    });
+    req.done(function(data) {
+      var current = data.currently;
+      current.time = "Now";
+      var daily = data.daily.data[0];
+      weather_module.hourlySum(current);
+      weather_module.hourlyDet(data);
+      weather_module.dailySum(daily);
+      weather_module.dailyDet(data);
+    });
+    req.fail(function( jqXHR, status ) {
+      console.log( "Request failed: " + status );
+    });
+
+  },
+
+  getMonth: function(lat, lng, time) {
+
+    var month;
+    if (time == 0) {
+      month = '01010131';
+    } else if (time == 1) {
+      month = '02010228';
+    } else if (time == 2) {
+      month = '03010331';
+    } else if (time == 3) {
+      month = '04010430';
+    } else if (time == 4) {
+      month = '05010531';
+    } else if (time == 5) {
+      month = '06010630';
+    } else if (time == 6) {
+      month = '07010731';
+    } else if (time == 7) {
+      month = '08010831';
+    } else if (time == 8) {
+      month = '09010930';
+    } else if (time == 9) {
+      month = '10011031';
+    } else if (time == 10) {
+      month = '11011130';
+    } else if (time == 11) {
+      month = '12011231';
+    }
+
+    var apiKey = env.wuKey;
+    var urlString = 'http://api.wunderground.com/api/' + apiKey + '/planner_' + month + '/q/' + lat + ',' + lng + '.json';
+
+    var req = $.ajax({
+      url: urlString,
+      method: 'GET',
+      dataType: "jsonp"
+    });
+    req.done(function(data) {
+      weather_module.monthSum(data);
+    });
+    req.fail(function( jqXHR, status ) {
+      console.log( "Request failed: " + status );
+    });
+
   }
 
 };

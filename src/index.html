@@ -22,7 +22,7 @@
     <header>
       <h1 class="hide-visually">SkyCast Weather</h1>
       <div class="row_justify">
-        <h2 id="currentLocation">Frederick</h2>
+        <h2 id="currentLocation">Current Location</h2>
         <button class="icon-search" type="button" aria-controls="search" aria-label="Search Google Places">
           <svg width="24px" height="26px" viewBox="0 0 24 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <title>Search Icon</title>
@@ -37,7 +37,7 @@
           </svg>
         </button>
         <button class="icon-map" type="button" aria-controls="menu" aria-label="Your Locations">
-          <svg width="21px" height="22px" viewBox="0 0 21 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <svg width="21" height="22" viewBox="0 0 21 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <title>Map Icon</title>
             <defs></defs>
             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -152,39 +152,31 @@
       <section data-weather="monthly" class="summary hide-completely">
         <h2 id="month"></h2>
         <p id="mTemp"></p>
-        <p id="mSum"></p>
+        <p id="mCloud"></p>
         <ul class="detailed">
           <li>
-            <p>Average</p>
-            <p id="mAve"></p>
+            <p>Precipitation</p>
+            <p id="mPrecip"></p>
           </li>
           <li>
             <p>Dew Point</p>
             <p id="mDew"></p>
           </li>
           <li>
-            <p>Precipitation</p>
-            <p id="mPrecip"></p>
+            <p>Fog</p>
+            <p id="mFog"></p>
           </li>
           <li>
-            <p>Wind</p>
-            <p id="mWind"></p>
+            <p>Snow</p>
+            <p id="mSnow"></p>
           </li>
           <li>
-            <p>Humidity</p>
-            <p id="mHumid"></p>
+            <p>Sunny</p>
+            <p id="mSun"></p>
           </li>
           <li>
-            <p>Cloud Cover</p>
-            <p id="mCloud"></p>
-          </li>
-          <li>
-            <p>Sunrise</p>
-            <p id="mSunrise"></p>
-          </li>
-          <li>
-            <p>Sunset</p>
-            <p id="mSunset"></p>
+            <p>Thunderstorms</p>
+            <p id="mThun"></p>
           </li>
         </ul>
       </section>
@@ -202,6 +194,21 @@
         <input class="input-text" id="findLocation" type="text" size="12" placeholder="Enter city">
       </section>
     </div>
+    <div class="menu-slide-left">
+      <section class="show-locations">
+        <h2>Your Locations</h2>
+        <button class="icon-close" type="button">
+          <svg>
+            <title>Close</title>
+            <use xlink:href="/images/close.svg#close"></use>
+          </svg>
+        </button>
+        <ul class="locations-list"></ul>
+      </section>
+    </div>
+    <section class="enter-section">
+      <button class="enter-location" type="button">Enter Location</button>
+    </section>
     <section data-weather="hourly" class="hourly">
       <ul id="hourlyDetailed">
       </ul>
@@ -216,7 +223,7 @@
     </section>
     </main>
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-2.1.1.min.js"><\/script>')</script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-2.2.2.min.js"><\/script>')</script>
     <script src="js/bundle.js"></script>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
