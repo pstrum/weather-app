@@ -1,13 +1,11 @@
 var locations_module = require('./locations_module');
 var weather_module = require('../weather_search/weather_module');
-var month_data = require('../weather_search/weather_exmondata');
 
 (function locationsCtrl() {
 
   function checkMonth() {
     var now = new Date();
     var m = now.getMonth();
-    console.log(m);
     return m;
   }
 
@@ -35,6 +33,7 @@ var month_data = require('../weather_search/weather_exmondata');
   }
 
   $('.locations-list').on('click', 'button', function() {
+    $("html, body").animate({scrollTop: 0});
     var name = $(this).attr('data-loc');
     var lat = $(this).attr('data-lat');
     var lng = $(this).attr('data-lng');

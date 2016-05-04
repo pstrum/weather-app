@@ -10,15 +10,17 @@
 }
 .icon-search {
   @extend %svg-btn;
-  svg g {
-    stroke: color(primary);
+  svg {
+    width: 24px;
+    height: 26px;
   }
 }
 
 .icon-map {
   @extend %svg-btn;
-  svg g {
-    fill: color(primary);
+  svg {
+    width: 21px;
+    height: 22px;
   }
 }
 

@@ -26,11 +26,11 @@ module.exports = {
       function checkMonth() {
         var now = new Date();
         var m = now.getMonth();
-        console.log(m);
         return m;
       }
 
       var month = checkMonth();
+      $("html, body").animate({scrollTop: 0});
 
       weatherData = weather.getWeather(lat, lng);
       weather.getMonth(lat, lng, month);
@@ -41,18 +41,6 @@ module.exports = {
       weather.updateLocation(placeShName);
       $('#findLocation').val('');
       $('body').removeClass('fixed').removeClass('menu-open').removeAttr('style');
-      //$('html').removeClass('body-menu');
-      //$('.menu-nav button').removeClass('selected');
-      //$('.menu-nav [aria-label="Hourly Forecast"]').addClass('selected');
-
-      //var hourly = $('[data-weather]');
-      //$.each(hourly, function(index, value) {
-        //if ($(this).hasClass('hide-completely') && ($(this).attr('data-weather') == 'hourly')) {
-          //$(this).removeClass('hide-completely');
-        //} else if (!$(this).hasClass('hide-completely')) {
-          //$(this).addClass('hide-completely');
-        //}
-      //});
 
     });
     return weatherData;
