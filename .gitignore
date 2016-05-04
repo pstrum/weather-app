@@ -34,3 +34,6 @@ server
 
 # Wireframes
 wireframes
+
+# Example Data
+src/app/example_data
