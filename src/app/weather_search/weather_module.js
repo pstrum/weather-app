@@ -302,7 +302,7 @@ var weather_module = module.exports = {
     }
 
     var apiKey = env.wuKey;
-    var urlString = 'http://api.wunderground.com/api/' + apiKey + '/planner_' + month + '/q/' + lat + ',' + lng + '.json';
+    var urlString = 'https://api.wunderground.com/api/' + apiKey + '/planner_' + month + '/q/' + lat + ',' + lng + '.json';
 
     var req = $.ajax({
       url: urlString,
