@@ -5,19 +5,19 @@ body {
 body.menu-open {
   height: 100%;
   width: 100%;
-  @media screen and (min-width: break(first)) {
-    height: auto;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    padding-left: 70px;
-    min-height: 100vh;
-  }
-  @media screen and (min-width: break(second)) {
-    body {
-      padding-left: 260px;
-    }
-  }
+  /*@media screen and (min-width: break(first)) {*/
+    /*height: auto;*/
+    /*position: relative;*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*padding-left: 70px;*/
+    /*min-height: 100vh;*/
+  /*}*/
+  /*@media screen and (min-width: break(second)) {*/
+    /*body {*/
+      /*padding-left: 260px;*/
+    /*}*/
+  /*}*/
 }
 
 body.fixed {

@@ -5,8 +5,9 @@
   align-items: center;
   max-width: 330px;
   margin: 0 auto;
-  #dSum {
+  #dSum, #mCloud {
     display: block;
+    flex-basis: 100%;
     margin: 5px auto;
   }
   .detailed {

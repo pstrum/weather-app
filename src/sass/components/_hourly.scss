@@ -13,11 +13,11 @@
       background-color: mix(white, color(base, dark), 80%);
     }
   }
-  .hour {
+  .hour, .day {
     font-weight: weight(light);
     font-size: type-scale(1);
   }
-  .hour-temp {
+  .hour-temp, .day-temp {
     font-size: type-scale(1);
   }
 }

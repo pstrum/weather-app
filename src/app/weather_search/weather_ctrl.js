@@ -3,6 +3,8 @@ var weatherdata_module = require('./weather_exdata');
 
 (function weatherCtrl() {
 
+  // If there is local storage, get the last one and show it
+
   $('.menu-nav [aria-label="Hourly Forecast"]').addClass('selected');
 
   $('.menu-nav button').click(function() {
@@ -34,13 +36,13 @@ var weatherdata_module = require('./weather_exdata');
     }
   })
 
-  var currently = weatherdata_module.currently;
-  console.log(weatherdata_module);
-  currently.time = "Now";
-  var daily = weatherdata_module.daily.data[0];
-  weatherModule.hourlySum(currently);
-  weatherModule.dailySum(daily);
-  weatherModule.dailyDet(weatherdata_module);
-  weatherModule.hourlyDet(weatherdata_module);
+  //var currently = weatherdata_module.currently;
+  //console.log(weatherdata_module);
+  //currently.time = "Now";
+  //var daily = weatherdata_module.daily.data[0];
+  //weatherModule.hourlySum(currently);
+  //weatherModule.dailySum(daily);
+  //weatherModule.dailyDet(weatherdata_module);
+  //weatherModule.hourlyDet(weatherdata_module);
 
 })();

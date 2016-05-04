@@ -6,6 +6,7 @@
       var updated = (time < 10 ? '0' : '') + time;
       return updated;
     }
+
     var now = new Date();
     var hh = now.getHours();
     hh = hh % 12;

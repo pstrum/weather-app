@@ -2,3 +2,39 @@
   font-size: type-scale($ratio);
   line-height: line-height($ratio);
 }
+
+@mixin slide-layout($direction) {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  min-width: 16rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  z-index: 1;
+  transform: $direction;
+  transition: transform 0.15s ease-in;
+  /*@media screen and (min-width: break(first)) {*/
+    /*order: 3;*/
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*width: auto;*/
+    /*height: 100%;*/
+    /*z-index: -2;*/
+    /*li {*/
+      /*display: flex;*/
+      /*flex-direction: column;*/
+      /*align-items: center;*/
+    /*}*/
+  /*}*/
+  /*@media screen and (min-width: break(second)) {*/
+    /*visibility: visible;*/
+    /*position: static;*/
+    /*left: 0;*/
+    /*height: auto;*/
+    /*transform: none;*/
+    /*background: none;*/
+    /*transition: none;*/
+    /*z-index: 0;*/
+  /*}*/
+}
