@@ -1,4 +1,6 @@
 var env = require('../../../server/config/environment');
+var exData = require('../example_data/weather_exdata');
+var exMData = require('../example_data/weather_exmondata');
 
 var weather_module = module.exports = {
 
@@ -252,23 +254,32 @@ var weather_module = module.exports = {
     var urlString = 'https://api.forecast.io/forecast/' + apiKey + '/' + lat + ',' + lng;
     var weatherData = localStorage;
 
-    var req = $.ajax({
-      url: urlString,
-      method: 'GET',
-      dataType: "jsonp",
-    });
-    req.done(function(data) {
-      var current = data.currently;
-      current.time = "Now";
-      var daily = data.daily.data[0];
-      weather_module.hourlySum(current);
-      weather_module.hourlyDet(data);
-      weather_module.dailySum(daily);
-      weather_module.dailyDet(data);
-    });
-    req.fail(function( jqXHR, status ) {
-      console.log( "Request failed: " + status );
-    });
+    var data = exData;
+    var current = data.currently;
+    current.time = "Now";
+    var daily = data.daily.data[0];
+    weather_module.hourlySum(current);
+    weather_module.hourlyDet(data);
+    weather_module.dailySum(daily);
+    weather_module.dailyDet(data);
+
+    //var req = $.ajax({
+      //url: urlString,
+      //method: 'GET',
+      //dataType: "jsonp",
+    //});
+    //req.done(function(data) {
+      //var current = data.currently;
+      //current.time = "Now";
+      //var daily = data.daily.data[0];
+      //weather_module.hourlySum(current);
+      //weather_module.hourlyDet(data);
+      //weather_module.dailySum(daily);
+      //weather_module.dailyDet(data);
+    //});
+    //req.fail(function( jqXHR, status ) {
+      //console.log( "Request failed: " + status );
+    //});
 
   },
 
@@ -304,17 +315,20 @@ var weather_module = module.exports = {
     var apiKey = env.wuKey;
     var urlString = 'https://api.wunderground.com/api/' + apiKey + '/planner_' + month + '/q/' + lat + ',' + lng + '.json';
 
-    var req = $.ajax({
-      url: urlString,
-      method: 'GET',
-      dataType: "jsonp"
-    });
-    req.done(function(data) {
-      weather_module.monthSum(data);
-    });
-    req.fail(function( jqXHR, status ) {
-      console.log( "Request failed: " + status );
-    });
+    var data = exMData;
+    weather_module.monthSum(data);
+
+    //var req = $.ajax({
+      //url: urlString,
+      //method: 'GET',
+      //dataType: "jsonp"
+    //});
+    //req.done(function(data) {
+      //weather_module.monthSum(data);
+    //});
+    //req.fail(function( jqXHR, status ) {
+      //console.log( "Request failed: " + status );
+    //});
 
   }
 

@@ -1,3 +1,13 @@
+@mixin btn($color: color(base), $bgcolor: color(accent), $size: type-scale(0)) {
+  padding: 7px 10px;
+  font-family: $primary;
+  font-size: $size;
+  font-weight: weight(light);
+  color: $color;
+  border-radius: 5px;
+  background-color: $bgcolor;
+}
+
 @mixin vertical-rhythm($ratio: 0) {
   font-size: type-scale($ratio);
   line-height: line-height($ratio);

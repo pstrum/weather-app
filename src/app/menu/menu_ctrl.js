@@ -21,7 +21,7 @@
     $("html").addClass("body-menu");
   })
 
-  $(".icon-close").click(function(event) {
+  $(".menu-close").click(function(event) {
 
     event.preventDefault();
 

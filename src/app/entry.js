@@ -3,3 +3,4 @@ require('./weather_search/weather_search');
 require('./menu/menu');
 require('./clock/clock');
 require('./locations/locations');
+require('./login/login');

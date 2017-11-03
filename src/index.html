@@ -179,7 +179,7 @@
     <div class="menu-slide">
       <section class="search-locations">
         <h2>Search</h2>
-        <button class="icon-close" type="button">
+        <button class="menu-close" type="button">
           <svg>
             <title>Close</title>
             <use xlink:href="/images/close.svg#close"></use>
@@ -191,13 +191,21 @@
     <div class="menu-slide-left">
       <section class="show-locations">
         <h2>Your Locations</h2>
-        <button class="icon-close" type="button">
+        <button class="menu-close" type="button">
           <svg>
             <title>Close</title>
             <use xlink:href="/images/close.svg#close"></use>
           </svg>
         </button>
         <ul class="locations-list"></ul>
+      </section>
+      <section class="user-login">
+        <h2>User Login</h2>
+        <input class="input-text" type="text" name="first-name" id="firstName" maxlength="50" placeholder="First name" required>
+        <input class="input-text" type="text" name="last-name" id="lastName" maxlength="50" placeholder="Last name" required>
+        <input class="input-text" type="email" name="usr-email" id="usrEmail" placeholder="Email" required>
+        <input class="input-text" type="text" name="usr-password" id="usrPassword" placeholder="Password" required min="30" max="100">
+        <button id="adduser" class="btn-light" type="submit">Login</button>
       </section>
     </div>
     <section class="enter-section">

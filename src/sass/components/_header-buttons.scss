@@ -40,16 +40,14 @@
   }
 }
 
-.menu-slide, .menu-slide-left {
-  button {
-    height: $base-line-height * 2;
-    width: $base-line-height * 2;
-    border-radius: $base-line-height;
-    background-color: color(primary);
-    text-align: center;
-    &:hover {
-      background-color: mix(white, color(primary), 10%);
-    }
+.menu-close {
+  height: $base-line-height * 2;
+  width: $base-line-height * 2;
+  border-radius: $base-line-height;
+  background-color: color(primary);
+  text-align: center;
+  &:hover {
+    background-color: mix(white, color(primary), 10%);
   }
   svg {
     height: $base-line-height;

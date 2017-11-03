@@ -1,0 +1,22 @@
+@keyframes slow-blink {
+  0% {
+    border: 2px solid color(primary);
+    box-shadow: inset 0 0 5px 1px color(base, dark);
+  }
+  10% {
+    border: 2px solid color(accent, alternative);
+    box-shadow: 0 0 7px color(accent, alternative);
+  }
+  20% {
+    border: 2px solid color(primary);
+    box-shadow: inset 0 0 5px 1px color(base, dark);
+  }
+  30% {
+    border: 2px solid color(accent, alternative);
+    box-shadow: 0 0 7px color(accent, alternative);
+  }
+  100% {
+    border: 2px solid color(primary);
+    box-shadow: inset 0 0 5px 1px color(base, dark);
+  }
+}

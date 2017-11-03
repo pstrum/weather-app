@@ -15,5 +15,9 @@
     font-size: type-scale(1);
     font-weight: weight(normal);
     color: color(base);
+    background-color: color(primary);
+    &:hover {
+      background-color: mix(white, color(primary), 10%);
+    }
   }
 }
